@@ -57,3 +57,5 @@ kubectl get pods -n kube-system
 ```yaml
 kubectl top nodes
 ```
+# **For HPA activity**.
+**In this demo, we will create an deployment & service files for Apache and with the help of HPA, we will automatically scale the number of pods based on CPU utilization.**
