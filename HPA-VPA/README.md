@@ -20,7 +20,7 @@ minikube addons enable metrics-server
 ```yaml
 kubectl top pod
 ```
-or 
+**or** 
 ```yaml
 kubectl top pod -n nginx
 ```
@@ -28,7 +28,7 @@ kubectl top pod -n nginx
 ```yaml
 kubectl top node
 ```
-or 
+**or** 
 ```yaml
 kubectl top node -n nginx
 ```
@@ -49,12 +49,11 @@ kubectl -n kube-system edit deployment metrics-server
 ```yaml
 kubectl -n kube-system rollout restart deployment metrics-server
 ```
-
 **Verify if the metrics server is running**
 ```yaml
 kubectl get pods -n kube-system
 ```
-To check the metrics
+**To check the metrics**
 ```yaml
 kubectl top nodes
 ```
