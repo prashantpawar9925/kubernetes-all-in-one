@@ -61,6 +61,8 @@ kubectl top nodes
 **In this demo, we will create an deployment & service files for Apache and with the help of HPA, we will automatically scale the number of pods based on CPU utilization.**
 
 **To create directory**
-- mkdir apache
-- cd apache
+```yaml
+mkdir apache
+cd apache
+```
 
