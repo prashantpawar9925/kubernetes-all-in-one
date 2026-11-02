@@ -78,3 +78,44 @@ To apply the namespace.yml
 kubectl apply -f namespace.yml
 ```
 
+To create the ``deployment.yml`` file
+```yaml
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: apache-deployment
+  namespace: apache
+spec:
+  replica: 1
+  selector:
+    matchLabels:
+      app: apache
+  template:
+    metadata:
+     name: apache
+     labels:
+       app: apache
+
+    spec: 
+     containers:
+     - name: apache
+       image: http:latest
+       ports:
+       - containerPort: 80
+       resources:
+         requests:
+           cpu: 100m
+           memory: 128Mi
+         limits:
+           cpu: 200m
+           memory: 256Mi
+```
+
+**To apply the deployment**
+```yaml
+- kubectl apply -f deployment.yml
+```
+**To check the pod is running or not**
+```yaml
+kubectl get pods -n apache
+```
