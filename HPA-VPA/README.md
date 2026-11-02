@@ -11,7 +11,7 @@
 - Setup minikube & KIND Cluster.
 - To check the metrics like cpu , memory utilization of your each pod and node then we have to enable the metrics server in kube system. If not already installed,   you can install it using:
 
-**If you have on minikube cluster then you can enable the metrics to check cpu, memory utilization each node & pod  **
+**If you have on minikube cluster then you can enable the metrics to check cpu, memory utilization each node & pod**
 ```yaml
 minikube addons enable metrics-server
 ```
