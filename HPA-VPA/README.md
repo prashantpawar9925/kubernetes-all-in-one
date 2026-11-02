@@ -73,7 +73,7 @@ apiVersion: v1
 metadata:
  name: apache
 ```
-To apply the namspace.yml
+To apply the namespace.yml
 ```yaml
 kubectl apply -f namespace.yml
 ```
