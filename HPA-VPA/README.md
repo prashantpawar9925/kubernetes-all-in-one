@@ -66,6 +66,7 @@ mkdir apache
 cd apache
 ```
 To create a ``namespace.yml``
+
 ```yaml
 kind: Namespace
 apiVersion: v1
