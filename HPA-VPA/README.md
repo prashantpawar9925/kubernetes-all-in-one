@@ -198,3 +198,12 @@ kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
 while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done
 ```
 `This will generate the continuous load on the Apache service, causing the HPA to scale up the number of pods.`
+
+- Now to check if HPA worked or not, open a same new terminal and run the following command
+```yaml
+kubectl get hpa -n apache
+```
+To check the pod status
+```yaml
+kubectl get pods -n apache
+```
