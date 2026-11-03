@@ -4,7 +4,7 @@
 
 ***HPA***: HPA controller automatically scale the number of pods based on CPU utilization.
 
-**VPA**: VPA controller scales by increasing or decreasing CPU and memory resources within the existing pod containers.
+***VPA***: VPA controller scales by increasing or decreasing CPU and memory resources within the existing pod containers.
 
 **Pre-requisites to implement this project:**
 - 2 CPU, 4GB of RAM (t2.medium) on AWS
