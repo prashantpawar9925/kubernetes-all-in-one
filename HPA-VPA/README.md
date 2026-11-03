@@ -113,7 +113,7 @@ spec:
 
 **To apply the deployment**
 ```yaml
-- kubectl apply -f deployment.yml
+kubectl apply -f deployment.yml
 ```
 **To check the pod is running or not**
 ```yaml
@@ -148,3 +148,35 @@ kubectl get all -n apache
 ```yaml
 kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
 ````
+**To Create HPA Resources**
+- We will create HPA resources for both Apache deployments. The HPA will scale the number of pods based on CPU utilization
+
+```yaml
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+metadata: 
+  name: apache-hpa
+  namespace: apache
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: apache-deployment
+    apiVersion: apps/v1
+
+  minReplicas: 1
+  maxReplicas: 5
+
+  metrics:
+   - type: Resource
+     resource:
+       name: cpu
+       target:
+         type: Utilization
+         averageUtilization: 5
+```
+- To apply the HPA resources
+```yaml
+kubectl get pods -n apache
+```
+- port forward to access the Apache service on browser.
+kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0 &  #(continus running)
