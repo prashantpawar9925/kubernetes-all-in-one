@@ -261,7 +261,7 @@ kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
 ```yaml
 while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done  (using this it will geneate the load)
 ```
-`If it is not working do port-forwarding then try`
+`!If it is not working do port-forwarding then try`
 
 - To check the memory utilize in pod
 ```yaml
