@@ -120,8 +120,7 @@ spec:
 kubectl get pods -n apache
 ```
 To create ``deployment.yml`` file
-
-'''yaml
+```yaml
 kind: Service
 apiVersion: v1
 metadata:
