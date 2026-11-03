@@ -120,6 +120,7 @@ spec:
 kubectl get pods -n apache
 ```
 To create ``deployment.yml`` file
+
 '''yaml
 kind: Service
 apiVersion: v1
@@ -137,12 +138,14 @@ spec:
   ```
 To run the service.yml file
 ```yaml
-- kubectl apply -f service.yml
+kubectl apply -f service.yml
 ```
+
 ```yaml
-- kubectl get all -n apache
+kubectl get all -n apache
 ```
+
 **port forward to access the Apache service on browser.**
 ```yaml
-- kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
+kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0
 ````
