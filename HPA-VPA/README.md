@@ -65,7 +65,7 @@ kubectl top nodes
 mkdir apache
 cd apache
 ```
-To create a ``namespace.yml``
+- To create a ``namespace.yml``
 
 ```yaml
 kind: Namespace
@@ -73,12 +73,12 @@ apiVersion: v1
 metadata:
  name: apache
 ```
-To apply the namespace.yml
+- To apply the namespace.yml
 ```yaml
 kubectl apply -f namespace.yml
 ```
 
-To create the ``deployment.yml`` file
+- To create the ``deployment.yml`` file
 ```yaml
 kind: Deployment
 apiVersion: apps/v1
@@ -119,7 +119,7 @@ kubectl apply -f deployment.yml
 ```yaml
 kubectl get pods -n apache
 ```
-To create ``service.yml`` file
+- To create ``service.yml`` file
 ```yaml
 kind: Service
 apiVersion: v1
@@ -257,7 +257,7 @@ watch kubectl get vpa -n apache
 kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
 ```
 
-after this you will get the busybox terminal to run the any command
+- After this you will get the busybox terminal to run the any command
 ```yaml
 while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done  (using this it will geneate the load)
 ```
