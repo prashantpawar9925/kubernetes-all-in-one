@@ -211,3 +211,64 @@ kubectl get pods -n apache
 ## For VPA Activity:
 **In this demo, we will create an deployment & service files for Apache and with the help of HPA. It will scales by increasing or decreasing CPU and memory resources within the existing pod containers**
 
+- First clone the Kubernetes autocaler official repo
+```yaml
+git clone https://github.com/kubernetes/autoscaler.git
+```
+- After clone move to `autoscaler/vertical-pod-autoscaler` folder
+```yaml
+cd autoscaler/vertical-pod-autoscaler
+```
+- To run the script below
+```yaml
+./hack/vpa-up.sh
+```
+
+- To create a VPA resources manifest file
+```yaml
+kind: VerticalPodAutoscaler
+apiVersion: autoscaling.k8s.io/v1
+metadata:
+ name: apache-vpa
+ namespace: apache
+
+spec:
+ targetRef:
+  name: apache-deployment
+  apiVersion: apps/v1
+  kind: Deployment
+ updatePolicy: 
+  updateMode: "Auto"
+```
+- To apply the VPA resources
+```yaml
+kubectl apply -f vpa.yml
+```
+- To check the Status of VPA resources
+```yaml
+kubectl get vpa -n apache
+```
+- To run on different tab
+```yaml
+watch kubectl get vpa -n apache
+```
+- Now run the load generator in different tab
+```yaml
+kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+```
+
+after this you will get the busybox terminal to run the any command
+```yaml
+while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done  (using this it will geneate the load)
+```
+If it is not working do port-forwarding then try
+
+- To check the memory utilize in pod
+```yaml
+kubectl top pod -n apache
+```
+
+- kubectl get vpa -n apache
+
+
+- kubetcl get pods -n apache ( pod is one but when load comes it will increase resources limits)
