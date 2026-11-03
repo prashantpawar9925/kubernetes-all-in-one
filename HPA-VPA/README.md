@@ -267,8 +267,10 @@ If it is not working do port-forwarding then try
 ```yaml
 kubectl top pod -n apache
 ```
-
-- kubectl get vpa -n apache
-
-
-- kubetcl get pods -n apache ( pod is one but when load comes it will increase resources limits)
+- To check the Status of VPA resources
+```yaml
+kubectl get vpa -n apache
+```
+```yaml
+kubetcl get pods -n apache ( pod is one but when load comes it will increase resources limits)
+```
