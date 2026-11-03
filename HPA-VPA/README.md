@@ -179,4 +179,6 @@ spec:
 kubectl get pods -n apache
 ```
 - port forward to access the Apache service on browser.
+```yaml  
 kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0 &  #(continus running)
+```
