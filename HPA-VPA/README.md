@@ -176,9 +176,14 @@ spec:
 ```
 - To apply the HPA resources
 ```yaml
-kubectl get pods -n apache
+kubectl apply -f hpa.yml
 ```
 - port forward to access the Apache service on browser.
 ```yaml  
 kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0 &  #(continus running)
 ```
+- To check the status of the HPA resources
+```yaml
+kubectl get hpa -n apache
+```
+`This will show you the current state of the HPA, including the current and desired number of replicas.`
