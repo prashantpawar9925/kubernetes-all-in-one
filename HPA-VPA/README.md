@@ -203,7 +203,9 @@ while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done
 ```yaml
 kubectl get hpa -n apache
 ```
-To check the pod status
+- To check the pod status
 ```yaml
 kubectl get pods -n apache
 ```
+
+## For VPA Activity:
