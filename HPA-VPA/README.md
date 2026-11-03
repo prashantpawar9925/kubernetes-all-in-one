@@ -187,3 +187,5 @@ kubectl port-forward service/apache-service -n apache 82:80 --address=0.0.0.0 & 
 kubectl get hpa -n apache
 ```
 `This will show you the current state of the HPA, including the current and desired number of replicas.`
+
+## Stress Testing
