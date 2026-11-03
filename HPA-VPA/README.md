@@ -189,3 +189,12 @@ kubectl get hpa -n apache
 `This will show you the current state of the HPA, including the current and desired number of replicas.`
 
 ## Stress Testing
+- To create a Pod for load-generator to strees the load
+```yaml
+kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+```
+- Inside the container, you can use 'wget' to generate load:
+```yaml
+while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done
+```
+`This will generate the continuous load on the Apache service, causing the HPA to scale up the number of pods.`
