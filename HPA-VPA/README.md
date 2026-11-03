@@ -119,7 +119,7 @@ spec:
 ```yaml
 kubectl get pods -n apache
 ```
-To create ``deployment.yml`` file
+To create ``service.yml`` file
 ```yaml
 kind: Service
 apiVersion: v1
@@ -135,7 +135,7 @@ spec:
       targetPort: 80  # container port
   type: ClusterIP
   ```
-To run the service.yml file
+To apply the service.yml file
 ```yaml
 kubectl apply -f service.yml
 ```
