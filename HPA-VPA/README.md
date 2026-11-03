@@ -209,3 +209,5 @@ kubectl get pods -n apache
 ```
 
 ## For VPA Activity:
+**In this demo, we will create an deployment & service files for Apache and with the help of HPA. It will scales by increasing or decreasing CPU and memory resources within the existing pod containers**
+
