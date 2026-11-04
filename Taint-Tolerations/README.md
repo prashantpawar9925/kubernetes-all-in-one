@@ -8,4 +8,4 @@
 ```yaml
 kubectl taint node node1 prod=true:NoSchedule
 ```
-`Note: The above command will taint the node1 with key "prod", without the appropriate tolerations no pods will schedule to node1.
+@Note: The above command will taint the node1 with key "prod", without the appropriate tolerations no pods will schedule to node1.
