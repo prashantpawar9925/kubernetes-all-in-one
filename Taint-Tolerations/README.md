@@ -6,5 +6,6 @@
 ## Implementation of Taints and Tolerations:
 - Taint a Node
 ```yaml
-kubectl taint node name_of_worker_node prod=true:NoSchedule
+kubectl taint node node1 prod=true:NoSchedule
 ```
+`Note: The above command will taint the node1 with key "prod", without the appropriate tolerations no pods will schedule to node1.
