@@ -9,3 +9,7 @@
 kubectl taint node node1 prod=true:NoSchedule
 ```
 ``Note: The above command will taint the node1 with key "prod", without the appropriate tolerations no pods will schedule to node1.``
+- To remove the taint , add - at the end of the command
+```yaml
+kubectl taint nodes node1 prod=true:NoSchedule-
+```
