@@ -9,7 +9,7 @@
 **Pre-requisites to implement this project:**
 - 2 CPU, 4GB of RAM (t2.medium) on AWS
 - Setup minikube & KIND Cluster.
-- To check the metrics like cpu , memory utilization of your each pod and node then we have to enable the metrics server in kube system. If not already installed,   you can install it using:
+- To check the metrics like cpu , memory utilization of each pod and node then we have to enable the metrics server in kube system. If not already installed,   you can install it using:
 
 **If you have on minikube cluster then you can enable the metrics to check cpu, memory utilization each node & pod**
 ```yaml
