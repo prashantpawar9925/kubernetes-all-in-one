@@ -13,3 +13,18 @@ kubectl taint node node1 prod=true:NoSchedule
 ```yaml
 kubectl taint nodes node1 prod=true:NoSchedule-
 ```
+
+```yaml
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nginx-pod
+  namespace: nginx
+
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+```
